@@ -23,11 +23,13 @@ namespace Hydra.Player
         public TypeOfPlayer _selectedType;
 
         private Rigidbody rb;
+        private PotionChoose _potionChoose;
         private Vector3 trajectory;
 
         void Start ()
         {
             rb = GetComponent<Rigidbody>();
+            _potionChoose = GetComponent<PotionChoose>();
         }
 
         private void Update()
@@ -42,9 +44,11 @@ namespace Hydra.Player
             if (Input.GetKeyUp(KeyCode.Tab))
             {
                 _otherPlayer.enabled = true;
+                if (_otherPlayer.transform.GetComponent<PotionChoose>()) _otherPlayer.transform.GetComponent<PotionChoose>().enabled = true;
                 _cameraPoint.transform.position = _otherPlayer.transform.position;
                 _cameraPoint.transform.parent = _otherPlayer.transform;
                 transform.GetComponent<Movement>().enabled = false;
+                if(_potionChoose != null) _potionChoose.enabled = false;
             }
             
         }
