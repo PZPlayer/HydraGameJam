@@ -151,12 +151,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4889affaed37a3c4d98f4f00ddb90027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  downBox:
-  - {fileID: 1336465268}
+  activatedObgects: []
   objectToMove: {fileID: 755003476}
   distanceToDrop: 2
   speed: 1
   invok: 1
+  moveOnX: 0
+  moveOnY: 0
+  moveOnZ: 1
 --- !u!4 &203605948
 Transform:
   m_ObjectHideFlags: 0
@@ -541,14 +543,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f47c979877aef8458177d260e23d554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lever:
-  - {fileID: 310360256}
+  activatedObgects: []
   objectToMove: {fileID: 1114136912}
   distanceToDrop: 3
   speed: 0.5
   invok: 0
-  osX: 1
-  osZ: 0
+  moveOnX: 1
+  moveOnY: 0
+  moveOnZ: 0
 --- !u!1 &1336465268
 GameObject:
   m_ObjectHideFlags: 0
