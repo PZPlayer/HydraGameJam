@@ -28,7 +28,7 @@ namespace Hydra.Player
         {
             if (HoldingObject != null)
             {
-                HoldingObject.GetComponent<ITakeable>().Drop();
+                HoldingObject.GetComponent<ITakeable>().Drop(obj);
             }
 
             if (obj.GetComponent<Rigidbody>())

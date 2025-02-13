@@ -1,51 +1,56 @@
-using System.Collections;
+using Hydra.Player;
 using UnityEngine;
 
 namespace Hydra.Potions
 {
     [RequireComponent(typeof(Rigidbody))]
-
     public class PotionBase : MonoBehaviour, ITakeable, IThrowable
     {
         [SerializeField] private GameObject _potion;
-        [SerializeField] private float speed;
+        [SerializeField][Range(0.1f, 100f)] private float speed = 10f;
 
-        private Rigidbody rb;
+        [SerializeField] private Rigidbody rb;
 
-        void Awake()
+        private void Awake()
         {
-            rb = GetComponent<Rigidbody>();
+           // rb = GetComponent<Rigidbody>();
+
             if (_potion == null)
             {
-                _potion = transform.gameObject;
+                _potion = gameObject; 
             }
         }
 
         public virtual void Throw(Vector3 direction)
         {
             transform.parent = null;
-            StartCoroutine(FlyToDestination(direction));
+            rb.isKinematic = false; 
+            rb.AddForce(direction.normalized * speed, ForceMode.VelocityChange);
         }
 
-        public IEnumerator FlyToDestination(Vector3 destination)
+        public virtual void Take(GameObject newParent)
         {
-            while (transform.position != destination)
+            rb.isKinematic = true; 
+            _potion.transform.position = newParent.transform.position;
+            _potion.transform.parent = newParent.transform; 
+        }
+
+        public virtual void OnCollisionEnter(Collision other)
+        {
+            CastEffect();
+        }
+
+        public virtual void CastEffect()
+        {
+            Destroy(gameObject);
+        }
+
+        public virtual void Drop(GameObject item)
+        {
+            if (_potion != null)
             {
-                transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
-                yield return null; 
+                Destroy(transform.gameObject);
             }
-        }
-
-        public virtual void Take(Transform transform)
-        {
-            rb.isKinematic = true;
-            _potion.transform.position = transform.position;
-            _potion.transform.parent = transform;
-        }
-
-        public virtual void Drop()
-        {
-            Destroy(_potion);
         }
     }
 }

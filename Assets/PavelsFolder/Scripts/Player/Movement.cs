@@ -3,6 +3,17 @@ using UnityEngine;
 
 namespace Hydra.Player
 {
+    public interface IThrowable
+    {
+        void Throw(Vector3 direction);
+    }
+
+    public interface ITakeable
+    {
+        void Take(GameObject item);
+        void Drop(GameObject item);
+    }
+
 
     public enum TypeOfPlayer
     {
@@ -14,62 +25,127 @@ namespace Hydra.Player
     public class Movement : MonoBehaviour
     {
         [SerializeField] private Movement _otherPlayer;
-        [SerializeField] private float _speed, _jumpForce;
+        [SerializeField] private float _speed;
+        [SerializeField] private float _jumpForce;
         [SerializeField] private GameObject _feet;
+        [SerializeField] private GameObject _model;
         [SerializeField] private GameObject _cameraPoint;
         [SerializeField] private LayerMask _standLayers;
         [SerializeField] private TypeOfPlayer _playerType;
 
-        public TypeOfPlayer _selectedType;
+        public TypeOfPlayer SelectedType { get; private set; }
 
         private Rigidbody rb;
-        private PotionChoose _potionChoose;
+        private PotionChoose potionChoose;
         private Vector3 trajectory;
 
-        void Start ()
+
+        private void Start()
         {
             rb = GetComponent<Rigidbody>();
-            _potionChoose = GetComponent<PotionChoose>();
+            potionChoose = GetComponent<PotionChoose>();
         }
 
         private void Update()
         {
-            Move();
-
-            if (isGrounded() && Input.GetKeyDown(KeyCode.Space))
-            {
-               Jump();
-            }
-
-            if (Input.GetKeyUp(KeyCode.Tab))
-            {
-                _otherPlayer.enabled = true;
-                if (_otherPlayer.transform.GetComponent<PotionChoose>()) _otherPlayer.transform.GetComponent<PotionChoose>().enabled = true;
-                _cameraPoint.transform.position = _otherPlayer.transform.position;
-                _cameraPoint.transform.parent = _otherPlayer.transform;
-                transform.GetComponent<Movement>().enabled = false;
-                if(_potionChoose != null) _potionChoose.enabled = false;
-            }
-            
+            HandleMovementInput();
+            HandleJumpInput();
+            HandleSwitchPlayerInput();
         }
 
-        void Move()
+        private void HandleMovementInput()
         {
             float horizontal = Input.GetAxisRaw("Horizontal");
             float vertical = Input.GetAxisRaw("Vertical");
 
             trajectory = new Vector3(horizontal, 0, vertical).normalized;
-            transform.position += trajectory * Time.deltaTime * _speed;
+
+            if (trajectory.magnitude > 0)
+            {
+                MoveCharacter(trajectory);
+                RotatePlayer();
+            }
         }
 
-        private bool isGrounded()
+        void RotatePlayer()
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(trajectory);
+
+            float targetYRotation = targetRotation.eulerAngles.y;
+
+            Quaternion finalRotation = Quaternion.Euler(0, targetYRotation, 0);
+
+            _model.transform.rotation = Quaternion.Slerp(_model.transform.rotation, finalRotation, 3 * Time.deltaTime);
+        }
+
+        private void MoveCharacter(Vector3 direction)
+        {
+            rb.MovePosition(rb.position + direction * _speed * Time.deltaTime);
+        }
+
+        private void HandleJumpInput()
+        {
+            if (IsGrounded() && Input.GetKeyDown(KeyCode.Space))
+            {
+                Jump();
+            }
+        }
+
+        private bool IsGrounded()
         {
             return Physics.CheckSphere(_feet.transform.position, 0.1f, _standLayers);
         }
 
-        void Jump()
+        private void Jump()
         {
             rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
+        }
+
+        private void HandleSwitchPlayerInput()
+        {
+            if (Input.GetKeyUp(KeyCode.Tab))
+            {
+                SwitchPlayer();
+            }
+        }
+
+        private void SwitchPlayer()
+        {
+            _otherPlayer.enabled = true;
+
+            PotionChoose otherPotionChoose = _otherPlayer.GetComponent<PotionChoose>();
+            if (otherPotionChoose != null)
+            {
+                otherPotionChoose.enabled = true;
+            }
+
+            _cameraPoint.transform.position = _otherPlayer.transform.position;
+            _cameraPoint.transform.parent = _otherPlayer.transform;
+
+
+            enabled = false;
+            if (potionChoose != null)
+            {
+                potionChoose.enabled = false;
+            }
+        }
+
+        public void HandleTake(GameObject item)
+        {
+            ITakeable takeable = item.GetComponent<ITakeable>();
+            if (takeable != null)
+            {
+                takeable.Take(gameObject);
+            }
+        }
+
+        public void HandleDrop(GameObject item)
+        {
+            ITakeable takeable = item.GetComponent<ITakeable>();
+            if (takeable != null)
+            {
+                takeable.Drop(item);
+            }
         }
     }
 }
