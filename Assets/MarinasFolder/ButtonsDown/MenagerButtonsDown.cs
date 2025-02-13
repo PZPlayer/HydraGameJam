@@ -35,52 +35,30 @@ public class MenagerButtonsDown : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
         if (count == downBox.Length)
         {
-            MoveObjectDown();
+            MoveObjectMove();
         } else
-        {            
-            MoveObjectUp();
+        {
+            MoveObjectAgaing();
         }
     }
 
-    private void MoveObjectDown()
+    private void MoveObjectMove()
     {
-        if (objectToMove.position.y > startPosition.y - distanceToDrop)
-        {
-            if (invok)
-            {
-                objectToMove.position = Vector3.MoveTowards(
-                objectToMove.position,
-                new Vector3(startPosition.x, startPosition.y + distanceToDrop, startPosition.z),
-                speed * Time.fixedDeltaTime);
-            }
-            else 
-            {
-                objectToMove.position = Vector3.MoveTowards(
-                objectToMove.position,
-                new Vector3(startPosition.x, startPosition.y - distanceToDrop, startPosition.z),
-                speed * Time.fixedDeltaTime);
-            }            
-        }
+        float targetY = startPosition.y + distanceToDrop * (invok ? 1 : -1);
+
+        objectToMove.position = Vector3.MoveTowards(
+            objectToMove.position,
+            new Vector3(startPosition.x, targetY, startPosition.z),
+            speed * Time.deltaTime);
     }
 
-    private void MoveObjectUp()
+    private void MoveObjectAgaing()
     {
-        if (objectToMove.position.y < startPosition.y)
-        {
-            objectToMove.position = Vector3.MoveTowards(
+        objectToMove.position = Vector3.MoveTowards(
                 objectToMove.position,
                 new Vector3(startPosition.x, startPosition.y, startPosition.z),
                 speed * Time.fixedDeltaTime);
-        }
-        else if (objectToMove.position.y > startPosition.y)
-        {
-            objectToMove.position = Vector3.MoveTowards(
-                    objectToMove.position,
-                    new Vector3(startPosition.x, startPosition.y, startPosition.z),
-                    speed * Time.fixedDeltaTime);
-        }    
     }
 }

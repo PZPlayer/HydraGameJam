@@ -21,17 +21,13 @@ public class MenagerLeverClick : MonoBehaviour
     private void Update()
     {
         count = 0;
-        for (int i = 0; i < lever.Length; i++)
+        foreach (var l in lever)
         {
-            if (lever[i].GetComponent<TriggerLever>().GetBoolLever())
+            if (l.GetComponent<TriggerLever>().GetBoolLever())
             {
                 count++;
             }
-            else
-            {
-                count--;
-            }
-        }
+        }        
     }
 
     private void FixedUpdate()
@@ -39,51 +35,42 @@ public class MenagerLeverClick : MonoBehaviour
 
         if (count == lever.Length)
         {
+
             if (osX)
-                if (startPosition == objectToMove.transform.position)
-                {
-                    if (invok)
-                        MoveObjectLeftX();
-                    else MoveObjectiRightX();
-                }
-                else
-                {
-                    if (invok)
-                        MoveObjectiRightX();
-                    else MoveObjectLeftX();
-                }
-            
-                
-           
+                MoveObjectOsX();
+            else if (osZ)
+                MoveObjectOsZ();
         }
         else
         {
-            if (osX)
-                if (invok)
-                    MoveObjectiRightX();
-                else MoveObjectLeftX();
+            ResetObjectPosition();
         }
     }
 
-    private void MoveObjectLeftX()
+    private void MoveObjectOsX()
     {
-        if (objectToMove.position.x > startPosition.x - distanceToDrop)
-        {
-            objectToMove.position = Vector3.MoveTowards(
-                objectToMove.position,
-                new Vector3(startPosition.x - distanceToDrop, startPosition.y, startPosition.z),
-                speed * Time.fixedDeltaTime);
-        }
-    }
+        float targetX = startPosition.x + distanceToDrop * (invok ? 1 : -1);
 
-    private void MoveObjectiRightX()
+        objectToMove.position = Vector3.MoveTowards(
+            objectToMove.position,
+            new Vector3(targetX, startPosition.y, startPosition.z),
+            speed * Time.fixedDeltaTime);
+    }  
+    
+    private void MoveObjectOsZ()
     {
-        if (objectToMove.position.z < startPosition.z)
-        {
-            objectToMove.position = Vector3.MoveTowards(
-                objectToMove.position,
-                new Vector3(startPosition.x, startPosition.y, startPosition.z),
-                speed * Time.fixedDeltaTime);
-        }
+        float targetZ = startPosition.z + distanceToDrop * (invok ? 1 : -1);
+
+        objectToMove.position = Vector3.MoveTowards(
+            objectToMove.position,
+            new Vector3(startPosition.x, startPosition.y, targetZ),
+            speed * Time.deltaTime);
+    }
+    private void ResetObjectPosition()
+    {
+        objectToMove.position = Vector3.MoveTowards(
+            objectToMove.position,
+            startPosition,
+            speed * Time.fixedDeltaTime);
     }
 }
