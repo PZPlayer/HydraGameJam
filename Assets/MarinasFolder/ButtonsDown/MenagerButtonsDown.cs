@@ -1,16 +1,18 @@
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class MenagerButtonsDown : MonoBehaviour
 {
-    [SerializeField] private GameObject [] downBox;
+    [SerializeField] private protected GameObject [] activatedObgects;
     [SerializeField] private Transform objectToMove;
     [SerializeField] private float distanceToDrop = 20f;
     [SerializeField] private float speed = 0.5f;
     [SerializeField] private bool invok = false;
+    [SerializeField] private bool moveOnX = false;
+    [SerializeField] private bool moveOnY = false;
+    [SerializeField] private bool moveOnZ = false;
 
     private Vector3 startPosition;    // Начальная позиция объекта
-    private int count = 0;
+    private protected int count = 0;
 
     private void Start()
     {
@@ -19,10 +21,15 @@ public class MenagerButtonsDown : MonoBehaviour
 
     private void Update()
     {
+        AllTrue();
+    }
+
+    public virtual void  AllTrue()
+    {
         count = 0;
-        for (int i = 0; i < downBox.Length; i++)
+        for (int i = 0; i < activatedObgects.Length; i++)
         {
-            if (downBox[i].GetComponent<TriggerBottonDown>().GetBoolBoxDown())
+            if (activatedObgects[i].GetComponent<TriggerBottonDown>().GetBoolBoxDown())
             {
                 count++;
             }
@@ -30,21 +37,44 @@ public class MenagerButtonsDown : MonoBehaviour
             {
                 count--;
             }
-        }        
+        }
     }
 
     private void FixedUpdate()
     {
-        if (count == downBox.Length)
+        if (count == activatedObgects.Length)
         {
-            MoveObjectMove();
+            if (moveOnX)
+                MoveObjectOnX();
+            else if (moveOnY)
+                MoveObjectOnY();
+            else if (moveOnZ)
+                MoveObjectOnZ();
         } else
         {
-            MoveObjectAgaing();
+            ResetObjectPosition();
         }
     }
+    private void MoveObjectOnX()
+    {
+        float targetX = startPosition.x + distanceToDrop * (invok ? 1 : -1);
 
-    private void MoveObjectMove()
+        objectToMove.position = Vector3.MoveTowards(
+            objectToMove.position,
+            new Vector3(targetX, startPosition.y, startPosition.z),
+            speed * Time.fixedDeltaTime);
+    }
+
+    private void MoveObjectOnZ()
+    {
+        float targetZ = startPosition.z + distanceToDrop * (invok ? 1 : -1);
+
+        objectToMove.position = Vector3.MoveTowards(
+            objectToMove.position,
+            new Vector3(startPosition.x, startPosition.y, targetZ),
+            speed * Time.deltaTime);
+    }
+    private void MoveObjectOnY()
     {
         float targetY = startPosition.y + distanceToDrop * (invok ? 1 : -1);
 
@@ -54,7 +84,7 @@ public class MenagerButtonsDown : MonoBehaviour
             speed * Time.deltaTime);
     }
 
-    private void MoveObjectAgaing()
+    private void ResetObjectPosition()
     {
         objectToMove.position = Vector3.MoveTowards(
                 objectToMove.position,
