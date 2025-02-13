@@ -1,3 +1,4 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class MenagerButtonsDown : MonoBehaviour
@@ -6,6 +7,7 @@ public class MenagerButtonsDown : MonoBehaviour
     [SerializeField] private Transform objectToMove;
     [SerializeField] private float distanceToDrop = 20f;
     [SerializeField] private float speed = 0.5f;
+    [SerializeField] private bool invok = false;
 
     private Vector3 startPosition;    // Начальная позиция объекта
     private int count = 0;
@@ -38,7 +40,7 @@ public class MenagerButtonsDown : MonoBehaviour
         {
             MoveObjectDown();
         } else
-        {
+        {            
             MoveObjectUp();
         }
     }
@@ -47,10 +49,20 @@ public class MenagerButtonsDown : MonoBehaviour
     {
         if (objectToMove.position.y > startPosition.y - distanceToDrop)
         {
-            objectToMove.position = Vector3.MoveTowards(
+            if (invok)
+            {
+                objectToMove.position = Vector3.MoveTowards(
+                objectToMove.position,
+                new Vector3(startPosition.x, startPosition.y + distanceToDrop, startPosition.z),
+                speed * Time.fixedDeltaTime);
+            }
+            else 
+            {
+                objectToMove.position = Vector3.MoveTowards(
                 objectToMove.position,
                 new Vector3(startPosition.x, startPosition.y - distanceToDrop, startPosition.z),
                 speed * Time.fixedDeltaTime);
+            }            
         }
     }
 
@@ -63,5 +75,12 @@ public class MenagerButtonsDown : MonoBehaviour
                 new Vector3(startPosition.x, startPosition.y, startPosition.z),
                 speed * Time.fixedDeltaTime);
         }
+        else if (objectToMove.position.y > startPosition.y)
+        {
+            objectToMove.position = Vector3.MoveTowards(
+                    objectToMove.position,
+                    new Vector3(startPosition.x, startPosition.y, startPosition.z),
+                    speed * Time.fixedDeltaTime);
+        }    
     }
 }

@@ -3,9 +3,9 @@ using UnityEngine;
 public class TriggerBottonDown : MonoBehaviour
 {
     private bool isDropping = false;
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("BoxActive") || other.CompareTag("Player"))
         {
             isDropping = true;
         }
