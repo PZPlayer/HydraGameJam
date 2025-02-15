@@ -6,6 +6,7 @@ TagManager:
   tags:
   - BoxActive
   - Magic
+  - Night
   layers:
   - Default
   - TransparentFX

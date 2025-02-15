@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 namespace Hydra.UI
@@ -41,6 +42,11 @@ namespace Hydra.UI
             {
                 t.UpdateText();
             }
+        }
+
+        public void LoadScene(string scene)
+        {
+            SceneManager.LoadScene(scene);
         }
     }
 }

@@ -22,6 +22,7 @@ namespace Hydra.Player
         [SerializeField] private LayerMask _groundLayer;
         private GameObject oldPotion;
         private int iindex;
+        [SerializeField] private Animator _anmtr;
 
         private void Update()
         {
@@ -40,6 +41,7 @@ namespace Hydra.Player
                     ThrowPotion(potion);
                 }
             }
+            _anmtr.SetBool("Holding", _chosenPotion != null);
         }
 
         private void HandlePotionSelection(PotionInInventory potion)
@@ -83,22 +85,12 @@ namespace Hydra.Player
                 if (groundPosition.HasValue)
                 {
                     throwable.Throw(groundPosition.Value);
+                    _anmtr.SetTrigger("Throw");
                 }
             }
             _chosenPotion = null;
             oldPotion = null;
         }
-
-        //private void HideAllPotions()
-        //{
-        //    foreach (var potion in _potions)
-        //    {
-        //        if (potion.PotionPrefab != null)
-        //        {
-        //            potion.PotionPrefab.GetComponent<ITakeable>().Drop(potion.PotionPrefab);
-        //        }
-        //    }
-        //}
 
         private Vector3? GetGroundPosition()
         {

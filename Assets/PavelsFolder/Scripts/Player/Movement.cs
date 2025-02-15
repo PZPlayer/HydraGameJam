@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 namespace Hydra.Player
@@ -30,15 +31,18 @@ namespace Hydra.Player
         [SerializeField] private GameObject _feet;
         [SerializeField] private GameObject _model;
         [SerializeField] private GameObject _cameraPoint;
+        [SerializeField] private GameObject _night;
         [SerializeField] private LayerMask _standLayers;
         [SerializeField] private TypeOfPlayer _playerType;
+        [SerializeField] private Animator _anmtr;
+        [SerializeField] private Material _darkForHuman;
+        [SerializeField] private Material _darkForVampire;
 
         public TypeOfPlayer SelectedType { get; private set; }
 
         private Rigidbody rb;
         private PotionChoose potionChoose;
         private Vector3 trajectory;
-
 
         private void Start()
         {
@@ -51,6 +55,12 @@ namespace Hydra.Player
             HandleMovementInput();
             HandleJumpInput();
             HandleSwitchPlayerInput();
+            ChangeNight();
+        }
+
+        private void ChangeNight()
+        {
+            _night.GetComponent<MeshRenderer>().material = _playerType == TypeOfPlayer.Human ? _darkForHuman : _darkForVampire;
         }
 
         private void HandleMovementInput()
@@ -60,10 +70,16 @@ namespace Hydra.Player
 
             trajectory = new Vector3(horizontal, 0, vertical).normalized;
 
+            _anmtr.SetBool("Fly", !IsGrounded());
+
             if (trajectory.magnitude > 0)
             {
                 MoveCharacter(trajectory);
                 RotatePlayer();
+            }
+            else
+            {
+                _anmtr.SetBool("Run", false);
             }
         }
 
@@ -80,6 +96,7 @@ namespace Hydra.Player
 
         private void MoveCharacter(Vector3 direction)
         {
+            _anmtr.SetBool("Run", true);
             rb.MovePosition(rb.position + direction * _speed * Time.deltaTime);
         }
 
@@ -145,6 +162,14 @@ namespace Hydra.Player
             if (takeable != null)
             {
                 takeable.Drop(item);
+            }
+        }
+
+        public void OnTriggerEnter(Collider other)
+        {
+            if(other.CompareTag("Night") && _playerType == TypeOfPlayer.Human)
+            {
+                SceneManager.LoadScene("Death");
             }
         }
     }

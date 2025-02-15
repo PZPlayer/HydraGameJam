@@ -24,7 +24,11 @@ namespace Hydra.Potions
         public virtual void Throw(Vector3 direction)
         {
             transform.parent = null;
-            rb.isKinematic = false; 
+            rb.isKinematic = false;
+
+            Debug.DrawRay(transform.position, direction.normalized * 5, Color.red, 2.0f);
+            
+            direction -= transform.position;
             rb.AddForce(direction.normalized * speed, ForceMode.VelocityChange);
         }
 
