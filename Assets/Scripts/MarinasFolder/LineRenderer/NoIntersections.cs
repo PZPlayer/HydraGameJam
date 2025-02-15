@@ -1,23 +1,22 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class NoIntersections : MonoBehaviour
 {
 
     [SerializeField] private AudioClip correctAudioClip;
-    [SerializeField] private AudioClip incorrectAudioClip;
-    [SerializeField] private Button chek;
-    [SerializeField] private List<LineRenderer> lines;
+    private List<LineRenderer> lines;
     private AudioSource audioSource;
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
         lines = new List<LineRenderer>(FindObjectsOfType<LineRenderer>());
-        chek.onClick.AddListener(ChekPoints);
     }
-
+    private void Update()
+    {
+        ChekPoints();
+    }
     private void ChekPoints()
     {
         lines = new List<LineRenderer>(FindObjectsOfType<LineRenderer>());
@@ -28,11 +27,6 @@ public class NoIntersections : MonoBehaviour
             Debug.Log("Уровень пройден!");
             audioSource.PlayOneShot(correctAudioClip);
             // Здесь можно добавить дополнительную логику, например, переход на следующий уровень
-        }
-        else
-        {
-            audioSource.PlayOneShot(incorrectAudioClip);
-            Debug.Log("Линии пересекаются, попробуйте еще раз.");
         }
     }
 
