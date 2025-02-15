@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Hydra.Player;
 
 
 namespace Hydra.UI
@@ -46,7 +47,7 @@ namespace Hydra.UI
 
         public void LoadScene(string scene)
         {
-            SceneManager.LoadScene(scene);
+            SceneManager.LoadScene(Movement.LastScene.name);
         }
     }
 }

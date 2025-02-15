@@ -25,6 +25,9 @@ namespace Hydra.Player
     [RequireComponent(typeof(Rigidbody))]
     public class Movement : MonoBehaviour
     {
+
+        public static Scene LastScene;
+
         [SerializeField] private Movement _otherPlayer;
         [SerializeField] private float _speed;
         [SerializeField] private float _jumpForce;
@@ -32,11 +35,14 @@ namespace Hydra.Player
         [SerializeField] private GameObject _model;
         [SerializeField] private GameObject _cameraPoint;
         [SerializeField] private GameObject _night;
+        [SerializeField] private GameObject _day;
         [SerializeField] private LayerMask _standLayers;
         [SerializeField] private TypeOfPlayer _playerType;
         [SerializeField] private Animator _anmtr;
         [SerializeField] private Material _darkForHuman;
         [SerializeField] private Material _darkForVampire;
+        [SerializeField] private Material _shineForHuman;
+        [SerializeField] private Material _shineForVampire;
 
         public TypeOfPlayer SelectedType { get; private set; }
 
@@ -48,6 +54,7 @@ namespace Hydra.Player
         {
             rb = GetComponent<Rigidbody>();
             potionChoose = GetComponent<PotionChoose>();
+            if(LastScene == SceneManager.GetActiveScene() || LastScene == null) LastScene = SceneManager.GetActiveScene();
         }
 
         private void Update()
@@ -61,6 +68,7 @@ namespace Hydra.Player
         private void ChangeNight()
         {
             _night.GetComponent<MeshRenderer>().material = _playerType == TypeOfPlayer.Human ? _darkForHuman : _darkForVampire;
+            _day.GetComponent<MeshRenderer>().material = _playerType == TypeOfPlayer.Human ? _shineForHuman: _shineForVampire;
         }
 
         private void HandleMovementInput()
@@ -91,7 +99,7 @@ namespace Hydra.Player
 
             Quaternion finalRotation = Quaternion.Euler(0, targetYRotation, 0);
 
-            _model.transform.rotation = Quaternion.Slerp(_model.transform.rotation, finalRotation, 3 * Time.deltaTime);
+            _model.transform.rotation = Quaternion.Slerp(_model.transform.rotation, finalRotation, 5 * Time.deltaTime);
         }
 
         private void MoveCharacter(Vector3 direction)
@@ -168,6 +176,10 @@ namespace Hydra.Player
         public void OnTriggerEnter(Collider other)
         {
             if(other.CompareTag("Night") && _playerType == TypeOfPlayer.Human)
+            {
+                SceneManager.LoadScene("DeathScene");
+            }
+            else if (other.CompareTag("Day") && _playerType == TypeOfPlayer.Vampire)
             {
                 SceneManager.LoadScene("DeathScene");
             }
