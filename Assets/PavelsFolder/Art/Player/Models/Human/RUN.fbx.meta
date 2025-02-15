@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 004aae5f8e8965c4e82b48908a781279
+guid: 56a59e177c54cf047a133b73fa7bcaa8
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,18 +33,18 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|ArmatureAction.001
-      takeName: Armature|ArmatureAction.001
-      internalID: -1422011007694221501
+      name: Armature|Armature.001|Armature.001|Armature.001|mixamo.com|Layer0GDFDFF
+      takeName: Armature|Armature.001|Armature.001|Armature.001|mixamo.com|Layer0
+      internalID: 4576148195965548219
       firstFrame: 0
-      lastFrame: 16
+      lastFrame: 22
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -66,7 +66,7 @@ ModelImporter:
       takeName: Armature|Armature|mixamo.com|Layer0
       internalID: -4791504522942941401
       firstFrame: 0
-      lastFrame: 0.93
+      lastFrame: 22
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

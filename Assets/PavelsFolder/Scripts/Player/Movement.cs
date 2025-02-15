@@ -169,7 +169,7 @@ namespace Hydra.Player
         {
             if(other.CompareTag("Night") && _playerType == TypeOfPlayer.Human)
             {
-                SceneManager.LoadScene("Death");
+                SceneManager.LoadScene("DeathScene");
             }
         }
     }
