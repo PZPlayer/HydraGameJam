@@ -45,9 +45,9 @@ namespace Hydra.UI
             }
         }
 
-        public void LoadScene(string scene)
+        public void LoadScene()
         {
-            SceneManager.LoadScene(Movement.LastScene.name);
+            SceneManager.LoadScene(DeathManager.Instance.SceneLastDeath);
         }
     }
 }

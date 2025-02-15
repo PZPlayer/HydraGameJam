@@ -1,3 +1,4 @@
+using Hydra.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -26,7 +27,7 @@ namespace Hydra.Player
     public class Movement : MonoBehaviour
     {
 
-        public static Scene LastScene;
+        public static int LastScene;
 
         [SerializeField] private Movement _otherPlayer;
         [SerializeField] private float _speed;
@@ -54,7 +55,7 @@ namespace Hydra.Player
         {
             rb = GetComponent<Rigidbody>();
             potionChoose = GetComponent<PotionChoose>();
-            if(LastScene == SceneManager.GetActiveScene() || LastScene == null) LastScene = SceneManager.GetActiveScene();
+            DeathManager.Instance.SceneLastDeath = SceneManager.GetActiveScene().buildIndex;
         }
 
         private void Update()
