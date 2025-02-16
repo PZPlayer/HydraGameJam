@@ -1,10 +1,13 @@
+using Hydra.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Esc : MonoBehaviour
 {
     public GameObject panel;
     public Button playButton;
+    public Slider VolumeSlider;
 
     private bool isPanelOpen = false; 
     
@@ -13,6 +16,7 @@ public class Esc : MonoBehaviour
         panel.SetActive(false);
 
         playButton.onClick.AddListener(TogglePanel);
+        VolumeSlider.value = Settings.Setting.MainVolume;
     }
 
     void Update()
@@ -23,9 +27,20 @@ public class Esc : MonoBehaviour
         }
     }
 
+    public void ChangeVolumeValue(Slider slider)
+    {
+        Settings.Setting.MainVolume = slider.value;
+    }
+
     void TogglePanel()
     {
         isPanelOpen = !isPanelOpen; // Переключаем состояние панели
         panel.SetActive(isPanelOpen); // Показываем или скрываем панель        
     }
+
+    public void LoadSomeScene(string name)
+    {
+        SceneManager.LoadScene(name);
+    }
+
 }

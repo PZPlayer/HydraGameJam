@@ -29,6 +29,8 @@ namespace Hydra.UI
             }
             Setting = this;
             DontDestroyOnLoad(gameObject);
+
+            print(Setting.transform.name);
         }
 
         void OnDestroy()
