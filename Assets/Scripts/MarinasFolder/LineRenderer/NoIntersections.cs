@@ -5,6 +5,9 @@ public class NoIntersections : MonoBehaviour
 {
 
     [SerializeField] private AudioClip correctAudioClip;
+    [SerializeField] private GameObject door;
+    [SerializeField] private Material red;
+    [SerializeField] private Material blue;
     private List<LineRenderer> lines;
     private AudioSource audioSource;
 
@@ -16,6 +19,8 @@ public class NoIntersections : MonoBehaviour
     private void Update()
     {
         ChekPoints();
+
+        ChangeLinesColor(lines);
     }
     private void ChekPoints()
     {
@@ -23,10 +28,9 @@ public class NoIntersections : MonoBehaviour
 
         if (!AreLinesIntersecting(lines))
         {
-            // Логика для успешного завершения уровня
             Debug.Log("Уровень пройден!");
             audioSource.PlayOneShot(correctAudioClip);
-            // Здесь можно добавить дополнительную логику, например, переход на следующий уровень
+            door.SetActive(true);
         }
     }
 
@@ -59,8 +63,7 @@ public class NoIntersections : MonoBehaviour
                 }
             }
         }
-
-        return false; // Пересечения не найдено
+        return false;
     }
 
     private static bool DoSegmentsIntersect(Vector3 start1, Vector3 end1, Vector3 start2, Vector3 end2)
@@ -82,5 +85,47 @@ public class NoIntersections : MonoBehaviour
         }
 
         return false; // Нет пересечения
+    }
+
+    private void ChangeLinesColor(List<LineRenderer> linesRenderer)
+    {
+        // Создаем список пар с пересечениями
+        HashSet<int> intersectingLinesIndices = new HashSet<int>();
+
+        for (int i = 0; i < linesRenderer.Count; i++)
+        {
+            LineRenderer currentLine = linesRenderer[i];
+            Vector3[] currentPoints = new Vector3[currentLine.positionCount];
+            currentLine.GetPositions(currentPoints);
+
+            for (int j = i + 1; j < linesRenderer.Count; j++)
+            {
+                LineRenderer otherLine = linesRenderer[j];
+                Vector3[] otherPoints = new Vector3[otherLine.positionCount];
+                otherLine.GetPositions(otherPoints);
+
+                for (int k = 0; k < currentPoints.Length - 1; k++)
+                {
+                    for (int l = 0; l < otherPoints.Length - 1; l++)
+                    {
+                        if (DoSegmentsIntersect(
+                            currentPoints[k], currentPoints[k + 1],
+                            otherPoints[l], otherPoints[l + 1]
+                        ))
+                        {
+                            // Добавляем индексы пересекаемых линий
+                            intersectingLinesIndices.Add(i);
+                            intersectingLinesIndices.Add(j);
+                        }
+                    }
+                }
+            }
+        }
+
+        // Меняем цвет линий на основе их пересечения
+        foreach (var line in linesRenderer)
+        {
+            line.material = intersectingLinesIndices.Contains(System.Array.IndexOf(linesRenderer.ToArray(), line)) ? red : blue;
+        }
     }
 }
