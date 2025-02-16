@@ -19,7 +19,7 @@ public class TriggerBottonDown : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("BoxActive") || other.CompareTag("Player"))
+        if (other.CompareTag("BoxActive") || (other.CompareTag("Player") && canPlayer))
         {
             _source.PlayOneShot(_clip);
         }
@@ -27,29 +27,43 @@ public class TriggerBottonDown : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("BoxActive"))
+        if (other.CompareTag("BoxActive") || (other.CompareTag("Player") && canPlayer))
         {
-            // Получаем Collider объекта
-            Collider boxCollider = other.GetComponent<Collider>();
-            if (boxCollider != null)
+            if (other.CompareTag("BoxActive"))
             {
-                Vector3 boxSize = boxCollider.bounds.size;
-                if (boxSize.x == scale) // Замените 1.0 на подходящее значение для вашего случая
+                Collider boxCollider = other.GetComponent<Collider>();
+
+                if (boxCollider != null)
                 {
-                    isDropping = true;
+                    Vector3 boxSize = boxCollider.transform.localScale;
+                    if (boxSize.x == scale)
+                    {
+                        isDropping = true;
+                        _changeColor.material = _pressed;
+                    }
+                    else
+                    {
+                        isDropping = false;
+                        _changeColor.material = _normal;
+                    }
                 }
             }
-        }
-        if (other.CompareTag("Player") && canPlayer)
-        {            
-            isDropping = true;
-            _changeColor.material = _pressed;
+            if (other.CompareTag("Player") && canPlayer)
+            {
+                isDropping = true;
+                _changeColor.material = _pressed;
+            }
+            
+        }else 
+        {
+            isDropping = false;
+            _changeColor.material = _normal;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if ((other.CompareTag("Player") && canPlayer) || (other.CompareTag("BoxActive")))
         {
             isDropping = false;
             _source.PlayOneShot(_clip);
