@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
-using Hydra.Player;
 
 
 namespace Hydra.UI
@@ -13,7 +12,6 @@ namespace Hydra.UI
         Rus = 1
     }
 
-
     public class Settings : MonoBehaviour
     {
         public static Settings Setting;
@@ -21,11 +19,42 @@ namespace Hydra.UI
         public Languages Language;
         public float MainVolume;
 
+        private int oldScene;
+        private int newScene = 0;
+
         void Start()
         {
-            if (Setting == null)
+            oldScene = newScene;
+            if (Setting != null && Setting != this)
             {
-                Setting = this;
+                Destroy(gameObject);
+                return;
+            }
+            Setting = this;
+            DontDestroyOnLoad(gameObject);
+        }
+
+        private void Update()
+        {
+            if(newScene != SceneManager.GetActiveScene().buildIndex)
+            {
+                oldScene = newScene;
+                OnSceneLoaded();
+                newScene = SceneManager.GetActiveScene().buildIndex;
+            }
+        }
+
+        private void OnSceneLoaded()
+        {
+            AudioSource[] audioSources = FindObjectsOfType<AudioSource>(); 
+
+            if(audioSources.Length > 0 )
+            {
+                for(int i = 0; i < audioSources.Length; i++)
+                {
+                    AudioSource source = audioSources[i];
+                    source.volume *= MainVolume;
+                }
             }
         }
 
@@ -48,6 +77,16 @@ namespace Hydra.UI
         public void LoadScene()
         {
             SceneManager.LoadScene(DeathManager.Instance.SceneLastDeath);
+        }
+
+        public void LoadSomeScene(string name)
+        {
+            SceneManager.LoadScene(name);
+        }
+
+        public void LaveGame()
+        {
+            Application.Quit();
         }
     }
 }
