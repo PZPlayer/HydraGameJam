@@ -19,9 +19,12 @@ namespace Hydra.UI
         public Languages Language;
         public float MainVolume;
 
+        private int oldScene;
+        private int newScene = 0;
+
         void Start()
         {
-            SceneManager.sceneLoaded += OnSceneLoaded;
+            oldScene = newScene;
             if (Setting != null && Setting != this)
             {
                 Destroy(gameObject);
@@ -31,12 +34,17 @@ namespace Hydra.UI
             DontDestroyOnLoad(gameObject);
         }
 
-        void OnDestroy()
+        private void Update()
         {
-            SceneManager.sceneLoaded -= OnSceneLoaded;
+            if(newScene != SceneManager.GetActiveScene().buildIndex)
+            {
+                oldScene = newScene;
+                OnSceneLoaded();
+                newScene = SceneManager.GetActiveScene().buildIndex;
+            }
         }
 
-        private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        private void OnSceneLoaded()
         {
             AudioSource[] audioSources = FindObjectsOfType<AudioSource>(); 
 
