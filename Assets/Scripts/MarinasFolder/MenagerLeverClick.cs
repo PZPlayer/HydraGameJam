@@ -9,9 +9,11 @@ public class MenagerLeverClick : MonoBehaviour
     [SerializeField] private GameObject[] createObjects;
     [SerializeField] private GameObject [] createPointObjects;
     private int countDoun = 0;
+    private bool doneOnce = false;
 
     private void Update()
     {
+        if(doneOnce) return;
         AllTrue();
         if (countDoun == activatedObgects.Length)
         {
@@ -41,6 +43,6 @@ public class MenagerLeverClick : MonoBehaviour
                 Instantiate(createObjects[i], createPointObjects[i].transform.position, createPointObjects[i].transform.rotation);
                 createObjects[i].SetActive(true);
             }
-            enabled = false;
+            doneOnce = true;
     }
 }

@@ -15,9 +15,10 @@ public class ClickToLoadScene : MonoBehaviour
     {
         int totalScenes = SceneManager.sceneCountInBuildSettings;
 
-        
+        print(totalScenes);
         if (SceneManager.GetActiveScene().buildIndex < totalScenes - 1)
         {
+            print(SceneManager.GetActiveScene().buildIndex);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         else
