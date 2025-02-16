@@ -36,7 +36,7 @@ public class TriggerBottonDown : MonoBehaviour
                 if (boxCollider != null)
                 {
                     Vector3 boxSize = boxCollider.transform.localScale;
-                    if (boxSize.x == scale)
+                    if (boxSize.x >= scale)
                     {
                         isDropping = true;
                         _changeColor.material = _pressed;
