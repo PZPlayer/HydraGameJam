@@ -47,6 +47,7 @@ namespace Hydra.Player
 
         public TypeOfPlayer SelectedType { get; private set; }
 
+        private SoundManager soundManager;
         private Rigidbody rb;
         private PotionChoose potionChoose;
         private Vector3 trajectory;
@@ -54,6 +55,7 @@ namespace Hydra.Player
         private void Start()
         {
             rb = GetComponent<Rigidbody>();
+            soundManager = GetComponent<SoundManager>();
             potionChoose = GetComponent<PotionChoose>();
             DeathManager.Instance.SceneLastDeath = SceneManager.GetActiveScene().buildIndex;
         }
@@ -106,6 +108,7 @@ namespace Hydra.Player
         private void MoveCharacter(Vector3 direction)
         {
             _anmtr.SetBool("Run", true);
+            if(IsGrounded()) soundManager.PlaySound(Sound.Walk);
             rb.MovePosition(rb.position + direction * _speed * Time.deltaTime);
         }
 
@@ -124,6 +127,7 @@ namespace Hydra.Player
 
         private void Jump()
         {
+            soundManager.PlaySound(Sound.Jump);
             rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
         }
 
@@ -137,6 +141,8 @@ namespace Hydra.Player
 
         private void SwitchPlayer()
         {
+            soundManager.PlaySound(Sound.ChangePlayer);
+
             _otherPlayer.enabled = true;
 
             PotionChoose otherPotionChoose = _otherPlayer.GetComponent<PotionChoose>();
