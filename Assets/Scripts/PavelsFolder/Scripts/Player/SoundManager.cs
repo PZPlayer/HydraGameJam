@@ -1,3 +1,4 @@
+using Hydra.UI;
 using UnityEngine;
 
 namespace Hydra.Player
@@ -24,7 +25,14 @@ namespace Hydra.Player
 
         public void PlaySound(Sound sound)
         {
-            audioSource.volume = Random.Range(0.3f, 1);
+            if(Settings.Setting.MainVolume != 0)
+            {
+                audioSource.volume = Random.Range(0.1f, Settings.Setting.MainVolume);
+            }
+            else
+            {
+                audioSource.volume = 0;
+            }
             switch (sound)
             {
                 case Sound.Walk:
