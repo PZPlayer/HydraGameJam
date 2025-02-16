@@ -1,9 +1,10 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NextLevelTrigger : MonoBehaviour
 {
     private ClickToLoadScene clickToLoadScene;
-    private void Awake()
+    private void Start()
     {
         clickToLoadScene = FindObjectOfType<ClickToLoadScene>();
     }

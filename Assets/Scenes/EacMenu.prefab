@@ -91,7 +91,6 @@ GameObject:
   - component: {fileID: 8295408042573648883}
   - component: {fileID: 8507022696701098988}
   - component: {fileID: 555409063541335127}
-  - component: {fileID: 5712895277895522146}
   m_Layer: 5
   m_Name: GlavMenu
   m_TagString: Untagged
@@ -201,20 +200,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5712895277895522146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 733089332988730820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a928e7731d2de04d90ee15747936059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneToLoad: Menu
-  notLoad: {fileID: 733089332988730820}
 --- !u!1 &2853820097426629484
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,6 +651,7 @@ GameObject:
   - component: {fileID: 2423554354859919964}
   - component: {fileID: 9002656374044750212}
   - component: {fileID: 1822596206748370120}
+  - component: {fileID: 5509728386592902293}
   m_Layer: 5
   m_Name: EacMenu
   m_TagString: Untagged
@@ -770,6 +756,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 8266915001763397478}
   playButton: {fileID: 8025300289960047972}
+--- !u!114 &5509728386592902293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5163018690380573807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a928e7731d2de04d90ee15747936059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: Menu
+  notLoad: {fileID: 733089332988730820}
 --- !u!1 &6686620779070042460
 GameObject:
   m_ObjectHideFlags: 0
