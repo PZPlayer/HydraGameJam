@@ -1,0 +1,417 @@
+[33mcommit 254bdc2539dd1fc907888591338618a5778e9cac[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: Pavel <lzhilinchik@gmail.com>
+Date:   Sun Feb 16 19:11:23 2025 +0300
+
+    Settings+Quick Fix
+
+[33mcommit d6bcf2bfa8f357b2bd2214797fd6ef3fd0fed44e[m
+Merge: b5913d5 f2c88b7
+Author: KtotoMeme <maxzveri773@gmail.com>
+Date:   Sun Feb 16 17:05:16 2025 +0200
+
+    Merge branch 'main' of https://github.com/PZPlayer/HydraGameJam
+
+[33mcommit b5913d529e7e8c0db902c795f0b5e6c4b6f496b5[m
+Author: KtotoMeme <maxzveri773@gmail.com>
+Date:   Sun Feb 16 17:05:09 2025 +0200
+
+    1lvl дизайн
+
+[33mcommit f2c88b75a8c44685e451344f655b34579e9c7d64[m
+Author: Pavel <lzhilinchik@gmail.com>
+Date:   Sun Feb 16 17:57:45 2025 +0300
+
+    Settings + LVL3
+
+[33mcommit 68619a985d4a0e8e84175464a4f65db11b55ea52[m
+Merge: 9b89c27 f709fe3
+Author: PZPlayer <141235888+PZPlayer@users.noreply.github.com>
+Date:   Sun Feb 16 17:24:35 2025 +0300
+
+    Merge pull request #13 from Ushastaya/main
+    
+    3 уровень
+
+[33mcommit f709fe338698a6756a9b0f685efd1b787617155d[m
+Merge: 61f1d80 9b89c27
+Author: Ushastaya <88803074+Ushastaya@users.noreply.github.com>
+Date:   Sun Feb 16 17:23:33 2025 +0300
+
+    Merge branch 'PZPlayer:main' into main
+
+[33mcommit 61f1d8068713806e6dec7c963e5a2660a5fb726e[m
+Author: В3441_МагераМА <1arya11stark@gmail.com>
+Date:   Sun Feb 16 17:22:11 2025 +0300
+
+    3 уровень.
+
+[33mcommit 9b89c278b503a3d94def98ca10bc9ef1d61b660b[m
+Merge: 6db2c38 fa8de54
+Author: PZPlayer <141235888+PZPlayer@users.noreply.github.com>
+Date:   Sun Feb 16 15:46:47 2025 +0300
+
+    Merge pull request #12 from Ushastaya/main
+    
+    3 в разработке
+
+[33mcommit fa8de5471e0d5000f04e5a9ff3a26586178004e0[m
+Merge: 9a63f72 6db2c38
+Author: В3441_МагераМА <1arya11stark@gmail.com>
+Date:   Sun Feb 16 15:41:01 2025 +0300
+
+    В разработке 3 уровень.
+
+[33mcommit 9a63f72a728fe69597078b3cf2f17b5a7d749615[m
+Author: В3441_МагераМА <1arya11stark@gmail.com>
+Date:   Sun Feb 16 15:38:50 2025 +0300
+
+    В разработке 3 уровень.
+
+[33mcommit 6db2c38f8a3b073cf3376a99cc93c397897a72c1[m
+Author: Pavel <lzhilinchik@gmail.com>
+Date:   Sun Feb 16 15:37:47 2025 +0300
+
+    PotionsChange
+
+[33mcommit b1f65bf004a6e5eed5895b22977a5dbecd0d4786[m
+Author: Pavel <lzhilinchik@gmail.com>
+Date:   Sun Feb 16 15:31:25 2025 +0300
+
+    AudioSet
+
+[33mcommit aa516a2416c819b6e46dc90a1a761ff630d38e52[m
+Author: Pavel <lzhilinchik@gmail.com>
+Date:   Sun Feb 16 15:00:03 2025 +0300
+
+    Sounds
+
+[33mcommit 7371e9ccb5cc1616b835303bb7590d45497a3c50[m
+Merge: d6311ed 6b3d9da
+Author: PZPlayer <141235888+PZPlayer@users.noreply.github.com>
+Date:   Sun Feb 16 14:59:45 2025 +0300
+
+    Merge pull request #11 from Ushastaya/main
+    
+    1 и 4 уровень
+
+[33mcommit 6b3d9da91bc6b81b98f39ed0ecb7ec82b5281f15[m
+Author: В3441_МагераМА <1arya11stark@gmail.com>
+Date:   Sun Feb 16 14:56:59 2025 +0300
+
+    Сделаны 1 и 4 уровень.
+
+[33mcommit e6e4b8543ed82b6c34639f71344ebbc024187416[m
+Author: В3441_МагераМА <1arya11stark@gmail.com>
+Date:   Sun Feb 16 14:56:18 2025 +0300
+
+    Сделаны 1 и 4 уровень.
+
+[33mcommit d6311ed10bcab752e928b8f3e1dd660cf7405f6c[m
+Author: Pavel <lzhilinchik@gmail.com>
+Date:   Sun Feb 16 14:18:11 2025 +0300
+
+    LittleFix
+
+[33mcommit 11389459524451751e8dc20dbfa46c9e81c2cb38[m
+Merge: b7a3861 782a94e
+Author: Ushastaya <88803074+Ushastaya@users.noreply.github.com>
+Date:   Sun Feb 16 04:21:48 2025 +0300
+
+    Merge pull request #10 from Ushastaya/main
+    
+    Первый уровень.
+
+[33mcommit 782a94e1dc54f4284059edc22988716450136b1d[m
+Author: В3441_МагераМА <1arya11stark@gmail.com>
+Date:   Sun Feb 16 04:21:19 2025 +0300
+
+    Первый уровень.
+
+[33mcommit b7a386150b93a7ed9ffe609342344760bbe2d087[m
+Merge: 20aa419 32fb63b
+Author: Ushastaya <88803074+Ushastaya@users.noreply.github.com>
+Date:   Sun Feb 16 03:31:13 2025 +0300
+
+    Merge pull request #9 from Ushastaya/main
+    
+    Уровень 2.
+
+[33mcommit 32fb63b93e76db82691499c2678f20b992d1d882[m
+Merge: 6521c7b 20aa419
+Author: Ushastaya <88803074+Ushastaya@users.noreply.github.com>
+Date:   Sun Feb 16 03:30:29 2025 +0300
+
+    Merge pull request #2 from PZPlayer/main
+    
+    Уровень 2.
+
+[33mcommit 6521c7b5ef01c44f75721440ec9c871a37b1a280[m
+Author: В3441_МагераМА <1arya11stark@gmail.com>
+Date:   Sun Feb 16 03:29:21 2025 +0300
+
+    Уроыень 2.
+
+[33mcommit 20aa41954de78f36cbb5a7135491b007ec7ed121[m
+Author: Pavel <lzhilinchik@gmail.com>
+Date:   Sun Feb 16 00:08:32 2025 +0300
+
+    1LVL
+
+[33mcommit d2fb3ac4de440b037d9261478746cf50003b7e61[m
+Author: Pavel <lzhilinchik@gmail.com>
+Date:   Sat Feb 15 23:45:15 2025 +0300
+
+    DeathFix
+
+[33mcommit 67818c95f90427900b81194a4ce6b6b7dd978f94[m
+Author: Pavel <lzhilinchik@gmail.com>
+Date:   Sat Feb 15 23:10:41 2025 +0300
+
+    LVL2
+
+[33mcommit 7f8ae247893b3da7e3de70b317f27f8fb82d39a2[m
+Merge: 4b3c351 9dc9961
+Author: PZPlayer <141235888+PZPlayer@users.noreply.github.com>
+Date:   Sat Feb 15 22:21:54 2025 +0300
+
+    Merge pull request #8 from Ushastaya/main
+    
+    Повторный залив 1 уровня
+
+[33mcommit 9dc9961ae50dfc31ea4fe92944f6cc58003d44c1[m
+Merge: 776df7a 4b3c351
+Author: В3441_МагераМА <1arya11stark@gmail.com>
+Date:   Sat Feb 15 22:20:15 2025 +0300
+
+    Merge branch 'main' of https://github.com/Ushastaya/HydraGameJam
+
+[33mcommit 776df7a6adb22b98f2a2a3af9f1b68b400db5dbc[m
+Author: В3441_МагераМА <1arya11stark@gmail.com>
+Date:   Sat Feb 15 22:15:46 2025 +0300
+
+    1 уровень.
+
+[33mcommit 4b3c351ecd37b90e1b806d9cf0e57b4ceb8887d5[m
+Merge: cba13fb 85d31b9
+Author: PZPlayer <141235888+PZPlayer@users.noreply.github.com>
+Date:   Sat Feb 15 22:13:46 2025 +0300
+
+    Merge pull request #7 from Ushastaya/main
+    
+    1 уровень
+
+[33mcommit 85d31b9f6dba9adb30f59f0e23698b5166b7fa36[m
+Merge: cdc44ac cba13fb
+Author: Ushastaya <88803074+Ushastaya@users.noreply.github.com>
+Date:   Sat Feb 15 22:08:44 2025 +0300
+
+    Merge pull request #1 from PZPlayer/main
+    
+    Merge pull request #6 from Ushastaya/main
+
+[33mcommit cdc44acc66946904d1faaa73c1167ea704703637[m
+Author: В3441_МагераМА <1arya11stark@gmail.com>
+Date:   Sat Feb 15 22:07:56 2025 +0300
+
+    1 уровень.
+
+[33mcommit cba13fbe13d5631e1f6f9659e4aa52e47ee4bf2a[m
+Merge: 961b988 a9c8e88
+Author: Ushastaya <88803074+Ushastaya@users.noreply.github.com>
+Date:   Sat Feb 15 21:09:03 2025 +0300
+
+    Merge pull request #6 from Ushastaya/main
+    
+    Перетасовка файло и добавление префабов.
+
+[33mcommit a9c8e889f4f3db80fd6578fe44e4dc41802991df[m
+Author: В3441_МагераМА <1arya11stark@gmail.com>
+Date:   Sat Feb 15 21:08:28 2025 +0300
+
+    Перетасовка файло и добавление префабов.
+
+[33mcommit 961b988f0f10bf9e166fe06ee919bfb7107f237c[m
+Author: Pavel <lzhilinchik@gmail.com>
+Date:   Sat Feb 15 17:41:28 2025 +0300
+
+    Again
+
+[33mcommit 7206f19424c63b01b6131c8fc29de51874cf59e7[m
+Author: Pavel <lzhilinchik@gmail.com>
+Date:   Sat Feb 15 16:56:40 2025 +0300
+
+    AnimationFix
+
+[33mcommit 52e66d0fec548d1cebef6c096c3f6816edf93d7e[m
+Merge: 5b2b3a9 085adb3
+Author: Pavel <lzhilinchik@gmail.com>
+Date:   Sat Feb 15 14:08:35 2025 +0300
+
+    Merge branch 'main' of https://github.com/PZPlayer/HydraGameJam
+
+[33mcommit 5b2b3a95a76afb9032a08b8023dc14a0ef287e20[m
+Author: Pavel <lzhilinchik@gmail.com>
+Date:   Sat Feb 15 14:08:32 2025 +0300
+
+    AllOther
+
+[33mcommit 085adb3b957ab958e32f08edf67af674f0d7aabf[m
+Merge: 2560839 dd28be8
+Author: UshastayaLady <167307691+UshastayaLady@users.noreply.github.com>
+Date:   Fri Feb 14 16:23:38 2025 +0300
+
+    Merge pull request #5 from UshastayaLady/Ushastaya
+    
+    Ushastaya
+
+[33mcommit dd28be80d071e011905bdbe4782dc17c8a016872[m
+Merge: aeb678e 2560839
+Author: UshastayaLady <167307691+UshastayaLady@users.noreply.github.com>
+Date:   Fri Feb 14 16:17:02 2025 +0300
+
+    Merge branch 'PZPlayer:main' into Ushastaya
+
+[33mcommit aeb678e69b2cdb2b9048e94a30d4eedbb9f99765[m
+Author: UshastayaLady <167307691+UshastayaLady@users.noreply.github.com>
+Date:   Fri Feb 14 16:15:36 2025 +0300
+
+    Скрипты для меню и меню пауза набросок.
+
+[33mcommit 256083913af6623dcc021a2a6fc3e4be95adffb9[m
+Merge: 73beaaf 9e61c3f
+Author: UshastayaLady <167307691+UshastayaLady@users.noreply.github.com>
+Date:   Fri Feb 14 16:14:04 2025 +0300
+
+    Merge pull request #4 from UshastayaLady/Ushastaya
+    
+    Скрипты для меню и меню пауза набросок.
+
+[33mcommit 9e61c3f2ba037825991e019dbe48507734c4164d[m
+Author: UshastayaLady <167307691+UshastayaLady@users.noreply.github.com>
+Date:   Fri Feb 14 16:13:08 2025 +0300
+
+    Скрипты для меню и меню пауза набросок.
+
+[33mcommit 73beaafd1db30c3b9ab36f1330c3bb697713c441[m
+Merge: f8ef2ba 7b810d8
+Author: PZPlayer <141235888+PZPlayer@users.noreply.github.com>
+Date:   Thu Feb 13 22:00:51 2025 +0300
+
+    Merge pull request #3 from UshastayaLady/Ushastaya
+    
+    Ushastaya
+
+[33mcommit 7b810d880b9760ba8128899e142361115f044a58[m
+Merge: 0fd0148 f8ef2ba
+Author: UshastayaLady <167307691+UshastayaLady@users.noreply.github.com>
+Date:   Thu Feb 13 22:00:38 2025 +0300
+
+    Merge branch 'main' into Ushastaya
+
+[33mcommit f8ef2ba0d639c1c29c034b821cb4b67f6f01d359[m
+Author: Pavel <lzhilinchik@gmail.com>
+Date:   Thu Feb 13 21:55:00 2025 +0300
+
+    PlayerModelFix
+
+[33mcommit 9c67c0856bcadbbaf4601ac53d6dfafe54c4dff8[m
+Author: Pavel <lzhilinchik@gmail.com>
+Date:   Thu Feb 13 21:08:17 2025 +0300
+
+    Potions!
+
+[33mcommit 0fd014828f34f26c06167d684b0d32cf3b7e2689[m
+Author: UshastayaLady <167307691+UshastayaLady@users.noreply.github.com>
+Date:   Thu Feb 13 16:38:49 2025 +0300
+
+    Сделана кнопка как родительский объект и рычаг как дочерний с переопределением мыссива активационных объектов
+
+[33mcommit 763d4ec50843662a135739c3c56740f1aefff477[m
+Author: UshastayaLady <167307691+UshastayaLady@users.noreply.github.com>
+Date:   Thu Feb 13 16:37:04 2025 +0300
+
+    Сделана кнопка как родительский объект и рычаг как дочерний с переопределением мыссива активационных объектов
+
+[33mcommit a527bfaea7c351039a1bb600b83d5d12f4544983[m
+Author: UshastayaLady <167307691+UshastayaLady@users.noreply.github.com>
+Date:   Thu Feb 13 15:30:24 2025 +0300
+
+    Сделан рычаг.
+
+[33mcommit 7bf83c768bef539cb620bcaec5c2af23454cae1d[m
+Author: UshastayaLady <167307691+UshastayaLady@users.noreply.github.com>
+Date:   Thu Feb 13 14:22:46 2025 +0300
+
+    Сделана инверсия для кнопки.
+
+[33mcommit 16f0f1d1e593b5eb4769ab3e822bec55038855af[m
+Author: Pavel <lzhilinchik@gmail.com>
+Date:   Wed Feb 12 19:00:02 2025 +0300
+
+    PotionsV1
+
+[33mcommit 9cfe5b4d05440418969430306b8e8aac2f17400f[m
+Merge: 2a89fab 2f8c410
+Author: PZPlayer <141235888+PZPlayer@users.noreply.github.com>
+Date:   Wed Feb 12 17:52:27 2025 +0300
+
+    Merge pull request #2 from UshastayaLady/Ushastaya
+    
+    Доделана кнопка
+
+[33mcommit 2f8c410b7f7b018dbca9b5edbba499d381c81cf3[m
+Author: UshastayaLady <167307691+UshastayaLady@users.noreply.github.com>
+Date:   Wed Feb 12 16:55:20 2025 +0300
+
+    Доделана кнопка
+
+[33mcommit 2a89fab293e0f8bbaeb2de518327d4b0acb54899[m
+Author: Pavel <lzhilinchik@gmail.com>
+Date:   Tue Feb 11 20:13:43 2025 +0300
+
+    CameraUpdate
+
+[33mcommit 7413ae6759d45002e661d8b0590dce360088f567[m
+Author: Pavel <lzhilinchik@gmail.com>
+Date:   Tue Feb 11 19:57:12 2025 +0300
+
+    Movement+Camera
+
+[33mcommit 92e6178b12dfff74992bdb668eea70acf78376ba[m
+Merge: 2e53301 26db95a
+Author: PZPlayer <141235888+PZPlayer@users.noreply.github.com>
+Date:   Tue Feb 11 17:31:10 2025 +0300
+
+    Merge pull request #1 from UshastayaLady/Ushastaya
+    
+    Сделана головоломка с паутиной и кнопка для открытие проходов.
+
+[33mcommit 26db95a33c9625bc756e23ea3017777d42f1442e[m
+Author: UshastayaLady <167307691+UshastayaLady@users.noreply.github.com>
+Date:   Tue Feb 11 16:52:12 2025 +0300
+
+    Сделана головоломка с паутиной и кнопка для открытие проходов.
+
+[33mcommit 2e533013dfa89ae9451c087a9db994b164db38e2[m
+Author: Pavel <lzhilinchik@gmail.com>
+Date:   Mon Feb 10 22:01:29 2025 +0300
+
+    Menu
+
+[33mcommit 72514ae628a0776f00a1196ee9e06c44707538ef[m
+Author: Pavel <lzhilinchik@gmail.com>
+Date:   Sun Feb 9 21:20:27 2025 +0300
+
+    Fix
+
+[33mcommit 041ad76b286d715ef88bd683ae7312df84ad10e8[m
+Author: Pavel <lzhilinchik@gmail.com>
+Date:   Sun Feb 9 20:55:29 2025 +0300
+
+    Start
+
+[33mcommit 0fc11a1985ae2009c1bf7ac1e82a66a131ed5b41[m
+Author: PZPlayer <141235888+PZPlayer@users.noreply.github.com>
+Date:   Sun Feb 9 20:49:00 2025 +0300
+
+    Initial commit

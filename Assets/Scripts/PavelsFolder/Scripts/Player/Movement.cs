@@ -143,9 +143,6 @@ namespace Hydra.Player
         {
             soundManager.PlaySound(Sound.ChangePlayer);
 
-            _anmtr.SetBool("Run", false);
-            _anmtr.SetBool("Fly", false);
-
             _otherPlayer.enabled = true;
 
             PotionChoose otherPotionChoose = _otherPlayer.GetComponent<PotionChoose>();
