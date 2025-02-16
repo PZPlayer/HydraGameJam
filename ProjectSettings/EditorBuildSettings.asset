@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PavelScenes/DeathScene.unity
     guid: a143d822ebeca8e4d854a03a3839cb0d
+  - enabled: 1
+    path: Assets/Scenes/GameScene/1.unity
+    guid: a65182e1419762948a1c997d80b7530f
+  - enabled: 1
+    path: Assets/Scenes/GameScene/2.unity
+    guid: d66fa81a8057da1498c7066526fbbc23
+  - enabled: 1
+    path: Assets/Scenes/GameScene/3.unity
+    guid: 42f35800ee126914a80a692ca1d4d9c8
   m_configObjects: {}
