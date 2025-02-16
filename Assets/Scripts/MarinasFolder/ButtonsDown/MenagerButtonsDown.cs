@@ -35,7 +35,7 @@ public class MenagerButtonsDown : MonoBehaviour
             }
             else
             {
-                count--;
+                count = 0;
             }
         }
     }
@@ -50,7 +50,8 @@ public class MenagerButtonsDown : MonoBehaviour
                 MoveObjectOnY();
             else if (moveOnZ)
                 MoveObjectOnZ();
-        } else
+        }
+        else
         {
             ResetObjectPosition();
         }
@@ -90,5 +91,5 @@ public class MenagerButtonsDown : MonoBehaviour
                 objectToMove.position,
                 new Vector3(startPosition.x, startPosition.y, startPosition.z),
                 speed * Time.fixedDeltaTime);
-    }
+    } 
 }

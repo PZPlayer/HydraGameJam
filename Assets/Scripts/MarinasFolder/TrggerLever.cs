@@ -11,7 +11,6 @@ public class TriggerLever : MonoBehaviour
         if (enter && Input.GetKeyDown(buttonName))
         {
             isActiv = !isActiv;
-            print("Тык");
         }
     }
     private void OnTriggerEnter(Collider other)
