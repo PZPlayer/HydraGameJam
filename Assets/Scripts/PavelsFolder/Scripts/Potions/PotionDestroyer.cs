@@ -13,7 +13,7 @@ namespace Hydra.Potions
             Collider[] colliders = Physics.OverlapSphere(transform.position, _radius);
             for(int i = 0; i < colliders.Length; i++)
             {
-                if(colliders[i].CompareTag("Magic"))
+                if(colliders[i].CompareTag("Magic") || colliders[i].CompareTag("BoxActive"))
                 {
                     Destroy(colliders[i].gameObject);
                 }
