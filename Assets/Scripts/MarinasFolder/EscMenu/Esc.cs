@@ -16,7 +16,11 @@ public class Esc : MonoBehaviour
         panel.SetActive(false);
 
         playButton.onClick.AddListener(TogglePanel);
-        VolumeSlider.value = Settings.Setting.MainVolume;
+        if(Settings.Setting != null)
+        {
+            VolumeSlider.value = Settings.Setting.MainVolume;
+        }
+
     }
 
     void Update()

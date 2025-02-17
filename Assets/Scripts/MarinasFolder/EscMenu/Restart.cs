@@ -4,14 +4,7 @@ using UnityEngine.UI;
 
 public class Restart : MonoBehaviour
 {
-    [SerializeField] private Button restartButton;
-    
-    void Update()
-    {
-        restartButton.onClick.AddListener(Newstart);
-    }
-
-    private void Newstart()
+    public void Newstart()
     {
         //Перезагрузка текущей сцены        
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

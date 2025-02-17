@@ -698,7 +698,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0db6707a9a4a736479711f34a84ccaa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restartButton: {fileID: 4493437252069777994}
 --- !u!1 &3881931896823771837
 GameObject:
   m_ObjectHideFlags: 0
@@ -948,7 +947,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 8266915001763397478}
   playButton: {fileID: 8025300289960047972}
-  VolumeSlider: {fileID: 0}
+  VolumeSlider: {fileID: 7750497261948485072}
 --- !u!114 &5509728386592902293
 MonoBehaviour:
   m_ObjectHideFlags: 0

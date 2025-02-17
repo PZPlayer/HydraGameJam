@@ -1,6 +1,7 @@
 using Hydra.Potions;
 using System;
 using UnityEngine;
+using TMPro;
 
 [Serializable]
 public struct PotionInInventory
@@ -10,6 +11,7 @@ public struct PotionInInventory
     public int PotionCount;
     public KeyCode PotionKeyCode;
     public KeyCode PotionThrowKeyCode;
+    public TextMeshProUGUI TextCount;
 }
 
 namespace Hydra.Player
@@ -29,6 +31,7 @@ namespace Hydra.Player
             for (int index = 0; index < _potions.Length; index++)
             {
                 PotionInInventory potion = _potions[index];
+                if (_potions[index].TextCount != null) _potions[index].TextCount.text = _potions[index].PotionCount.ToString();
 
                 if (Input.GetKeyDown(potion.PotionKeyCode))
                 {
@@ -78,6 +81,7 @@ namespace Hydra.Player
         private void ThrowPotion(PotionInInventory potion)
         {
             _potions[iindex].PotionCount--;
+
             IThrowable throwable = _chosenPotion.GetComponent<IThrowable>();
             if (throwable != null)
             {

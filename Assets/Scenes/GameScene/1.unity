@@ -2678,98 +2678,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3920abaf76146f04e95e8d2ef87a9d4d, type: 3}
---- !u!1 &637998832
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 637998835}
-  - component: {fileID: 637998834}
-  - component: {fileID: 637998833}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!81 &637998833
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 637998832}
-  m_Enabled: 1
---- !u!20 &637998834
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 637998832}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_Iso: 200
-  m_ShutterSpeed: 0.005
-  m_Aperture: 16
-  m_FocusDistance: 10
-  m_FocalLength: 50
-  m_BladeCount: 5
-  m_Curvature: {x: 2, y: 11}
-  m_BarrelClipping: 0.25
-  m_Anamorphism: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &637998835
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 637998832}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &647095805
 GameObject:
   m_ObjectHideFlags: 0
@@ -6572,6 +6480,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2544321798809472092, guid: ebccb58b9f9d03b4c87cf3ca3b22e9c0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493437252069777994, guid: ebccb58b9f9d03b4c87cf3ca3b22e9c0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493437252069777994, guid: ebccb58b9f9d03b4c87cf3ca3b22e9c0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493437252069777994, guid: ebccb58b9f9d03b4c87cf3ca3b22e9c0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1329862729}
+    - target: {fileID: 4493437252069777994, guid: ebccb58b9f9d03b4c87cf3ca3b22e9c0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493437252069777994, guid: ebccb58b9f9d03b4c87cf3ca3b22e9c0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Newstart
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493437252069777994, guid: ebccb58b9f9d03b4c87cf3ca3b22e9c0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Restart, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493437252069777994, guid: ebccb58b9f9d03b4c87cf3ca3b22e9c0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5163018690380573807, guid: ebccb58b9f9d03b4c87cf3ca3b22e9c0, type: 3}
       propertyPath: m_Name
       value: EacMenu
@@ -6580,11 +6520,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9220483563378682177, guid: ebccb58b9f9d03b4c87cf3ca3b22e9c0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebccb58b9f9d03b4c87cf3ca3b22e9c0, type: 3}
+--- !u!114 &1329862729 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3929105024471208613, guid: ebccb58b9f9d03b4c87cf3ca3b22e9c0, type: 3}
+  m_PrefabInstance: {fileID: 1329862728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0db6707a9a4a736479711f34a84ccaa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1331880476
 GameObject:
   m_ObjectHideFlags: 0
@@ -8712,16 +8667,19 @@ MonoBehaviour:
     PotionCount: 0
     PotionKeyCode: 49
     PotionThrowKeyCode: 323
+    TextCount: {fileID: 0}
   - PotionName: TestBluePotion(Big)
     PotionPrefab: {fileID: 7569771180998540858, guid: d22b52e5ff5a5d34987bd024832fa776, type: 3}
     PotionCount: 0
     PotionKeyCode: 50
     PotionThrowKeyCode: 323
+    TextCount: {fileID: 0}
   - PotionName: TestGreenPotion(Small)
     PotionPrefab: {fileID: 7569771180998540858, guid: d9b19c528f34a044d9b00e307c68ba8b, type: 3}
     PotionCount: 0
     PotionKeyCode: 51
     PotionThrowKeyCode: 323
+    TextCount: {fileID: 0}
   _chosenPotion: {fileID: 0}
   _hands: {fileID: 438803879}
   _groundLayer:
@@ -10478,7 +10436,6 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 637998835}
   - {fileID: 647095807}
   - {fileID: 677148327}
   - {fileID: 1779503139}

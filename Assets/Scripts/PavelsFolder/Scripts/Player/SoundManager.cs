@@ -21,6 +21,7 @@ namespace Hydra.Player
         private void Start()
         {
             audioSource = GetComponent<AudioSource>();
+            print("AB");
         }
 
         public void PlaySound(Sound sound)
@@ -37,6 +38,7 @@ namespace Hydra.Player
             switch (sound)
             {
                 case Sound.Walk:
+                    print("AA");
                     audioSource.clip = _walk;
                     if(!audioSource.isPlaying) audioSource.Play();
                     break;

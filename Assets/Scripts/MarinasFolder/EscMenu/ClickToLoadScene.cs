@@ -23,7 +23,7 @@ public class ClickToLoadScene : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene("Menu");
         }
     }
 }

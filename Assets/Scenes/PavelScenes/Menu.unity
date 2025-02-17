@@ -642,8 +642,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1777564131}
-        m_TargetAssemblyTypeName: Hydra.UI.Settings, Assembly-CSharp
+      - m_Target: {fileID: 8001317145620446306}
+        m_TargetAssemblyTypeName: Hydra.UI.SettingsSaveConf, Assembly-CSharp
         m_MethodName: LaveGame
         m_Mode: 1
         m_Arguments:
@@ -775,8 +775,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1777564131}
-        m_TargetAssemblyTypeName: Hydra.UI.Settings, Assembly-CSharp
+      - m_Target: {fileID: 8001317145620446306}
+        m_TargetAssemblyTypeName: Hydra.UI.SettingsSaveConf, Assembly-CSharp
         m_MethodName: LoadSomeScene
         m_Mode: 5
         m_Arguments:
@@ -3374,8 +3374,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _writebleText: {fileID: 0}
-  _textInEnglish: Game Name
-  _textInRussian: "\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435 \u0418\u0433\u0440\u044B"
+  _textInEnglish: Forgotten Formula
+  _textInRussian: "\u0417\u0430\u0431\u044B\u0442\u0430\u044F \u0424\u043E\u0440\u043C\u0443\u043B\u0430"
 --- !u!1 &7163031054479393118
 GameObject:
   m_ObjectHideFlags: 0
@@ -3638,6 +3638,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mainVolume: {fileID: 5946303159836126852}
   _languageSelect: {fileID: 1794156005423809688}
+  _saveButton: {fileID: 0}
+  _saveButton1: {fileID: 0}
+  _saveButton2: {fileID: 0}
 --- !u!1 &8120951690723862107
 GameObject:
   m_ObjectHideFlags: 0

@@ -9067,16 +9067,19 @@ MonoBehaviour:
     PotionCount: 0
     PotionKeyCode: 49
     PotionThrowKeyCode: 323
+    TextCount: {fileID: 0}
   - PotionName: TestBluePotion(Big)
     PotionPrefab: {fileID: 7569771180998540858, guid: d22b52e5ff5a5d34987bd024832fa776, type: 3}
     PotionCount: 0
     PotionKeyCode: 50
     PotionThrowKeyCode: 323
+    TextCount: {fileID: 0}
   - PotionName: TestGreenPotion(Small)
     PotionPrefab: {fileID: 7569771180998540858, guid: d9b19c528f34a044d9b00e307c68ba8b, type: 3}
     PotionCount: 0
     PotionKeyCode: 51
     PotionThrowKeyCode: 323
+    TextCount: {fileID: 0}
   _chosenPotion: {fileID: 0}
   _hands: {fileID: 779644497}
   _groundLayer:
